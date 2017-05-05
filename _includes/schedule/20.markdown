@@ -1,0 +1,20 @@
+	<td markdown="block">
+
+* Back to [CSS](slides/19/css.html)?
+* Back to [events](slides/19/events.html)
+* [Ajax Part 1](slides/20/ajax.html)
+
+
+<!-- 
+* [](slides//.html)
+* [](slides//.html)
+-->
+</td>
+	<td markdown="block">
+* {{site.book_js}} - Chapter 17 - HTML (Focus on the section on XMLHttpRequest)
+</td>
+	<td markdown="block">
+<!--
+* [](assignments/.html)
+-->
+</td>

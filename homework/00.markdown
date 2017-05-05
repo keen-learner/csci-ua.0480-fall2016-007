@@ -1,0 +1,20 @@
+---
+layout: homework
+title: CSCI-UA.0480 - Homework #0
+---
+
+<div class="panel panel-default">
+	<div class="panel-heading">Homework #9</div>
+	<div class="panel-body" markdown="block">
+
+# Installation, GitHub Username
+
+Do this so I can assign you _real_ homework next class!
+
+* Use [this form](https://docs.google.com/a/nyu.edu/forms/d/10KgZOl8sOR3y5d4QxvcVe7fB20xR5xtWEH8J-0QvECI/edit) to give me your github user name 
+* [Please install Node.js, K THX.](../slides/01/intro.html#/25)
+</div>
+
+</div>
+
+

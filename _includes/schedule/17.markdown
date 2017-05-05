@@ -1,0 +1,42 @@
+	<td markdown="block">
+
+Slides
+
+{% comment %}
+* [About Class #17](slides/17/meta.html)
+	* nodemon demo
+	* checkboxes and hidden inputs
+	* homework
+	* quiz demo
+	* final projects
+	* midterm
+{% endcomment %}
+{% comment %}
+* Quick authentication and SSL review
+* Midterm exam 
+* Homework extra credit
+{% endcomment %}
+* [HTML Primer, JavaScript and the Browser](slides/17/javascript-browser.html)
+* [The Document Object Model](slides/17/dom.html)
+* [DOM Continued](slides/17/dom-continued.html)
+* [Attributes](slides/17/attributes.html)
+
+
+<!-- 
+* [](slides//.html)
+* [](slides//.html)
+
+-->
+</td>
+	<td markdown="block">
+* {{site.book_js}} - Chapter 12 - JavaScript and the Browser
+* {{site.book_js}} - Chapter 13 - The Document Object Model
+* [HTML and CSS from shayhowe.com](http://learn.shayhowe.com/html-css/getting-to-know-html/)
+</td>
+	<td markdown="block">
+
+
+{% comment %}
+* [Homework #6](homework/06.html)
+{% endcomment %}
+</td>

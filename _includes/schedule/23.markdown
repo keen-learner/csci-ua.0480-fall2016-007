@@ -1,0 +1,45 @@
+	<td markdown="block">
+
+* Realtime Apps with Socket.io
+    * [Socket.io](slides/23/socketio.html)
+    * [Example Code for Socket.io Chat](https://github.com/nyu-csci-ua-0480-001-fall-2016/examples/tree/master/class25/socketio-chat)
+* AJAX Polling Code Examples
+    * [AJAX Polling Chat](https://github.com/nyu-csci-ua-0480-001-fall-2016/examples/blob/master/class24/ajax-chat/public/javascripts/chat.js)
+    * [AJAX Polling Chat Using Date and Time](https://github.com/nyu-csci-ua-0480-001-fall-2016/examples/blob/master/class24/ajax-chat/public/javascripts/chatTime.js)
+
+{% comment %}
+* (from forever ago) [CSS](slides/19/css.html)
+
+* Homework Questions
+* Milestone #2 Questions (read the comments, please)
+* [Ajax Part 2](slides/21/ajax-express.html)
+    * [review](slides/21/ajax-express.html#/8) and rebuild XMLHttpRequest / hello
+    * deal with errors
+    * [try another](slides/20/ajax.html#/25) [url](http://data.nba.com/data/15m/json/cms/noseason/game/20160205/0021500754/boxscore.json)...  and go back to CORs and SOP
+    * [repository viewer](http://localhost:4000/slides/21/ajax-express.html#/10)
+* [Promises](slides/22/promises.html)
+* [See AJAX Examples in repository](https://github.com/jversoza/ait-spring-16-examples)
+{% endcomment %}
+
+{% comment %}
+* [Deployment](slides/23/deployment.html)
+{% endcomment %}
+
+<!-- 
+* [](slides//.html)
+* [](slides//.html)
+-->
+</td>
+	<td markdown="block">
+<!--
+* Chapter 
+* Chapter 
+-->
+</td>
+	<td markdown="block">
+    {% comment %}
+Due Friday, April 29th
+
+* [Homework #8](homework/08.html)
+    {% endcomment %}
+</td>

@@ -1,0 +1,23 @@
+	<td markdown="block">
+{% comment %}
+{% endcomment %}
+* [es6/es2015/esnext](slides/24/es6.html) 
+* [Rooms](slides/24/socketio-rooms.html) 
+* [Socket IO Lab](homework/socket-io-lab.html)
+    * [Form to submit](https://docs.google.com/a/nyu.edu/forms/d/e/1FAIpQLSemeHqPeVOljn0cMcEm6EB0iaedw95SOS-AcATqZhhdz8IpNQ/viewform)
+* Example Code
+    * [Solution to Socket.io Lab](https://github.com/nyu-csci-ua-0480-001-fall-2016/examples/blob/master/class25/socketio-racer-and-grid/racer-app.js)
+    * [More Example Code for Socket.io](https://github.com/nyu-csci-ua-0480-001-fall-2016/examples/blob/master/class25/socketio-racer-and-grid/grid-app.js)
+</td>
+	<td markdown="block">
+
+* [Core ES6 Features](http://exploringjs.com/es6/ch_core-features.html)
+* [Socket IO How-To](http://socket.io/docs/)
+* [Socket IO Rooms](http://socket.io/docs/rooms-and-namespaces/)
+
+</td>
+	<td markdown="block">
+<!--
+* [](assignments/.html)
+-->
+</td>

@@ -1,0 +1,18 @@
+	<td markdown="block">
+* [Ajax Part 2](slides/21/ajax-express.html)
+* [Promises](slides/21/promises.html)
+* [Example Code for AJAX Post](https://github.com/nyu-csci-ua-0480-001-fall-2016/examples/blob/master/class24/ajax-chat/public/javascripts/chatTime.js#L51)
+
+</td>
+	<td markdown="block">
+<!--
+* Chapter 
+* Chapter 
+-->
+</td>
+	<td markdown="block">
+Due <strike>Monday, November 28th</strike> Friday, December 2nd
+
+* [Homework #8](homework/08.html) - (extended) Last Homework!
+* [Milestone #3](final-project.html#milestone3) 
+</td>

@@ -1,0 +1,52 @@
+	<td markdown="block">
+
+* [Layout and Style](slides/19/layout-style.html)
+* [JavaScript Timers](slides/19/timers.html)
+* [Events](slides/19/events.html)
+* [CSS](slides/19/css.html)
+* [Selectors, JS and CSS](slides/19/js-css.html)
+
+{% comment %}
+* homework
+    * extra credit
+* final project
+    * milestone
+    * reference source material (tutorials)
+    * (even if it's just slides or old homework!)
+    * write your own code / academic integrity
+* go back over DOM slides
+* [Modifying and Adding Elements](slides/19/modifying-creating.html)
+* [Layout and Style](slides/19/layout-style.html)
+* [JavaScript Timers](slides/19/timers.html)
+* [Events](slides/19/events.html)
+* [CSS](slides/19/css.html)
+* [Selectors, JS and CSS](slides/19/js-css.html)
+{% endcomment %}
+
+{% comment %}
+* clean up modifying and creating eleemnts
+	* remember elt
+* x activate hw
+* x study nth child
+* x specificity
+* test out timer example
+* redo events
+* add flexbox
+{% endcomment %}
+</td>
+	<td markdown="block">
+* {{site.book_js}} - Chapter 12 - JavaScript and the Browser
+* {{site.book_js}} - Chapter 13 - The Document Object Model
+* [HTML and CSS from shayhowe.com](http://learn.shayhowe.com/html-css/getting-to-know-html/)
+</td>
+	<td markdown="block">
+
+{% comment %}
+In class activity
+
+* [Form to submit talksAbout function](https://docs.google.com/a/nyu.edu/forms/d/1bqPF8NaUAj1AtVwEcnWnEoaeriOU6MWRmTPpZ0BuGR0/viewform)
+* [Instructions / slides](slides/17/dom.html#/14)
+
+{% endcomment %}
+
+</td>

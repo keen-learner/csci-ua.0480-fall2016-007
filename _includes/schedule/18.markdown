@@ -1,0 +1,31 @@
+	<td markdown="block">
+
+
+* go back over DOM slides
+* [DOM Continued sample markup](code/dom-continued.html)
+* reminder re: final project - milestone 1
+* [Deployment on i6](homework/deploy.html)
+* [Modifying and Adding Elements](slides/18/modifying-creating.html)
+
+Midterm Exam - Solution Sets
+ 
+* [Midterm Solutions (Ramen)](resources/handouts/midterm_1/midterm_007_ramen_solutions.pdf)
+* [Midterm Solutions (Star)](resources/handouts/midterm_1/midterm_007_star_solutions.pdf)
+
+</td>
+	<td markdown="block">
+
+* {{site.book_js}} - Chapter 12 - JavaScript and the Browser
+* {{site.book_js}} - Chapter 13 - The Document Object Model
+* [HTML and CSS from shayhowe.com](http://learn.shayhowe.com/html-css/getting-to-know-html/)
+
+</td>
+	<td markdown="block">
+Due Wednesday, November 16th
+
+* [Milestone #2 - Deployment](final-project.html#milestone2)... [and Form](https://docs.google.com/a/nyu.edu/forms/d/e/1FAIpQLSfNVdjXefEJRdx_NmC26VI6GJfj_ezcnwB2UHR4C9C8nDJPVA/viewform)
+
+Due Monday, November 21st
+
+* Maybe... depending on what we cover today, also: [Homework #7](homework/07.html)
+</td>

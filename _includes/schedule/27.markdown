@@ -1,0 +1,15 @@
+	<td markdown="block">
+
+* [React and Express / Using Webpack](slides/27/react-webpack-continued.html)
+</td>
+	<td markdown="block">
+<!--
+* Chapter 
+* Chapter 
+-->
+</td>
+	<td markdown="block">
+<!--
+* [](assignments/.html)
+-->
+</td>

@@ -1,0 +1,34 @@
+	<td markdown="block">
+* [Intro](slides/01/intro.html)
+* [About JavaScript](slides/01/javascript.html)
+* [Values, Types, and Operators](slides/01/values-types-operators.html)
+* [Variables, Built-in Functions](slides/01/variables-control-structures.html)
+* [Control Structures](slides/01/conditionals-loops.html)
+* [Coercion (Revisited), Casting, Undefined, and Style](slides/01/coercion-casting-undefined.html)
+* [And/Or](slides/01/and-or-nan-undefined.html)
+* [Functions](slides/01/functions.html)
+* [Hoisting](slides/01/hoisting.html)
+* Homework #0
+
+{% comment %}
+* [About Class #3](slides/03/meta.html)
+{% endcomment %}
+</td>
+	<td markdown="block">
+* [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 1 - Values, Types, and Operators
+* [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 2 - Program Structure
+* [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 3 - Functions
+
+{% comment %}
+* [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 4 - Data Structures: Data Structures: Objects and Arrays
+{% endcomment %}
+</td>
+	<td markdown="block">
+Due Today, 9/07 (during class / immediately after?)
+
+* [A Survey](https://docs.google.com/a/nyu.edu/forms/d/e/1FAIpQLSdslWAqOMlXOl-d12sO2TsJl1l70wDUIrruV3794B9E5tL7zg/viewform)
+
+Due Monday, 9/12, before 11pm
+
+* [Homework #0](homework/00.html) (install node, send me your github username)
+</td>

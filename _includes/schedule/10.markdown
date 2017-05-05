@@ -1,0 +1,32 @@
+	<td markdown="block">
+
+* Review Middleware
+* Review [Response and Request Objects / Along with Templating](slides/09/request-response.html#7)
+* [More About Get](slides/10/review-get.html)
+* [Forms](slides/10/forms.html)
+* [Sessions and Cookies](slides/10/sessions.html)
+* Homework #4 Demo
+
+<!-- 
+* [Maybe Static Sites, Remote Server](slides/08/static.html)
+* [Maybe Debugging](slides/09/debugging.html)
+
+* [](slides//.html)
+* [](slides//.html)
+-->
+</td>
+	<td markdown="block">
+
+
+<!--
+* Chapter 
+* Chapter 
+-->
+</td>
+	<td markdown="block">
+
+Due October 19th
+
+* [Homework #4](homework/04.html)
+
+</td>

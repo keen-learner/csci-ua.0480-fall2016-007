@@ -1,0 +1,31 @@
+	<td markdown="block">
+* From Previous Class: [Intro to Web Development](slides/05/web.html) 
+* [Networking and Sockets](slides/06/sockets.html)
+* [A Webserver](slides/06/webserver.html)
+* From Previous Class (maybe?) [Patterns, Errors, Use Strict](slides/05/patterns-errors-strict.html)
+
+</td>
+	<td markdown="block">
+* [Let's build a Web Server (in Python, but useful for our class) Parts 1 through 3](https://ruslanspivak.com/lsbaws-part1/)
+* [MDN HTTP Overview (check the links to headers, status codes, etc. as well](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+* [Tangled Web - Chapter 3  -  Hypertext Transfer Protocol (available online via NYU Library)](https://getit.library.nyu.edu/go/9409104)
+* [MDN on Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
+* nczonline articles on [Cookies](https://www.nczonline.net/blog/2009/05/05/http-cookies-explained/) and [Cokies and Security](https://www.nczonline.net/blog/2009/05/12/cookies-and-security/)
+</td>
+	<td markdown="block">
+In-Class Programming Activity
+
+* [Creating an HTTP Request object, and a Poll](https://docs.google.com/a/nyu.edu/forms/d/e/1FAIpQLSd2y8w9m0126Jx5MNXgC9IchYPW0QsnruU_W9tMU_3HDtsBhg/viewform)
+
+Due <strike>Wednesday, 10/05</strike> Thursday, 10/06, by 11pm
+
+* [Homework #3](homework/03.html) 
+
+Due Monday, 10/03, by 11pm
+
+* Quiz #02 and #03 - Objects Basics and Objects and Prototypes
+
+<!--
+* [](assignments/.html)
+-->
+</td>

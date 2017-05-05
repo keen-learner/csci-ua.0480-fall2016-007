@@ -1,0 +1,20 @@
+	<td markdown="block">
+
+* [React Basics](slides/25/react.html)
+* [React Revisited](slides/25/react-webpack.html)
+* [React and Express / Using Webpack](slides/25/react-webpack-continued.html)
+* [Binary Calculator Example Code](https://github.com/nyu-csci-ua-0480-001-fall-2016/examples/blob/master/class27/binary-calculator/src/index.js)
+
+
+</td>
+	<td markdown="block">
+
+* [Hello World](https://facebook.github.io/react/docs/hello-world.html) and [Official Tutorial](https://facebook.github.io/react/tutorial/tutorial.html)
+* [Build With React](http://buildwithreact.com/)
+
+</td>
+	<td markdown="block">
+<!--
+* [](assignments/.html)
+-->
+</td>

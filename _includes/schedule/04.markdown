@@ -1,0 +1,29 @@
+	<td markdown="block">
+
+* [Higher Order Functions Continued](slides/04/higher-order-functions-continued.html) 
+* [JSON](slides/03/objects.html#/20)
+* [Objects Revisited](slides/04/objects-prototypes.html)
+* [A Detour: Globals, Methods, and This](slides/04/globals-methods-this.html)
+* [Objects and Prototypes](slides/04/prototypes.html)
+* [Patterns, Errors, Use Strict](slides/04/patterns-errors-strict.html)
+
+</td>
+	<td markdown="block">
+* [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 6 - The Secret Life of Objects
+* [{{ site.book_js }}]({{ site.book_js_link }}) <br> Chapter 8 - Bugs and Error Handling 
+* [{{ site.book_js_2 }}](http://speakingjs.com/es5/ch17.html#prototype_relationship) - Chapter 17 -  Layer 2: The Prototype Relationship Between Objects
+</td>
+	<td markdown="block">
+
+Due Monday, 9/26, by 11pm
+
+* [Homework #2](homework/02.html) 
+
+Due Monday, 9/26, by 11pm
+
+* Quiz #01 - Hoisting and Higher Order Functions (find it in NYU Classes, it should be open by 11pm tonight)
+
+Practice / Optional (not graded)
+
+* Quiz #00 - JavaScript Basics (find it in NYU Classes, it should be open by 11pm tonight)
+</td>

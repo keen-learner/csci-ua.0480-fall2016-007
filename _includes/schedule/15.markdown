@@ -1,0 +1,42 @@
+	<td markdown="block">
+
+* Exam Grades by Wednesday
+* Final Exam, HW Extra Credit
+* [Final Project](final-project.html)
+* Review Databases (see class 11 and 12)
+* [Routers, Project/Directory Layout, nodemon](slides/15/layout.html)
+* [Parameters from URLs](slides/15/params.html)
+* [Mongoose](slides/15/mongoose.html)
+* [Validation](slides/15/validation.html)
+
+
+{% comment %}
+* [Authentication](slides/15/auth.html)
+{% endcomment %}
+
+<!-- 
+* [](slides//.html)
+* [](slides//.html)
+-->
+</td>
+	<td markdown="block">
+MongoDB
+
+[Data Modeling Intro](https://docs.mongodb.com/manual/core/data-modeling-introduction/)
+[Data Model Design](https://docs.mongodb.com/v3.2/core/data-model-design/)
+[Modeling Relationships / Examples](https://docs.mongodb.com/v3.2/applications/data-models-relationships/)
+
+Mongoose
+
+[Embedded Documents - Sub Docs](http://mongoosejs.com/docs/subdocs.html) 
+[Document References - Mongoose Population](http://mongoosejs.com/docs/populate.html) 
+
+</td>
+	<td markdown="block">
+
+Due Monday, November 7th at 11pm
+
+* [Homework #06](homework/06.html)
+* [First milestone](final-project.html#proposal)
+    * (12/8 - [Final Project](final-project.html))
+</td>

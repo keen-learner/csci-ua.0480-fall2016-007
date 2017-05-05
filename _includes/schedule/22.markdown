@@ -1,0 +1,23 @@
+	<td markdown="block">
+{% comment %}
+* [About Class #22](slides/22/meta.html)
+{% endcomment %}
+
+* Previous class on Promises
+* [Example Promise Code for XMLHttpRequest](https://github.com/nyu-csci-ua-0480-001-fall-2016/examples/blob/master/class23/ajax/public/javascripts/demo.js#L87)
+
+{% comment %}
+* (from forever ago) [CSS](slides/19/css.html)
+{% endcomment %}
+</td>
+	<td markdown="block">
+<!--
+* Chapter 
+* Chapter 
+-->
+</td>
+	<td markdown="block">
+<!--
+* [](assignments/.html)
+-->
+</td>

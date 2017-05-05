@@ -1,0 +1,7 @@
+*.swp
+node_modules
+bower_components
+.DS_Store
+.jekyll-metadata
+_site/
+.sass-cache/

@@ -1,0 +1,557 @@
+---
+layout: homework
+title: CSCI-UA.0480 - Homework #2
+---
+
+<div class="panel panel-default">
+	<div class="panel-heading">Homework #2</div>
+	<div class="panel-body" markdown="block">
+
+# Higher Order Functions Exercises, Basketball - __Due Monday, September 26th, by 11PM__
+
+## Overview
+
+### Description
+
+__exercises.js__ - Write a series of 6 functions that demonstrate the use of the arguments object, higher order functions and call/apply/bind.
+
+__basketball.js__ - Print out a report analyzing basketball games based off of JSON data. There are two parts to this file:
+
+* An initial version that works off of a JSON string within your code.
+* An second version that works off of remote urls and additional data.
+
+See the [sample output](#hw02-sample) at the end of these instructions.
+
+### Submission Process
+
+You will be given access to a private repository on GitHub. It will contain unit tests, stub files for your code, a `package.json` and a `.jshintrc`
+
+* The final version of your assignment should be in GitHub.
+* __Push__ your changes to the homework repository on GitHub.
+
+### (4 points) Make at Least 4 Commits
+
+* Commit multiple times throughout your development process.
+* Make at least 4 separate commits - (for example, one option may be to make one commit per part in the homework).
+
+## Part 1 - Setup and Exercises
+
+For this homework, you'll have files available in your repository, so you'll be cloning first.
+
+The solutions to the following problems can go in the same file - __src/exercises.js__:
+
+### Setup
+
+1. go to your github account...
+2. find your repository: NetID-homework02 (note... this __should be your NetID__)
+3. use the appropriate URL to run git clone
+
+<pre><code data-trim contenteditable>git clone [YOUR REPO URL]</code></pre>
+
+### Background Info
+
+Implement 6 functions that use JavaScript features such as:
+
+* the `arguments` object
+* functions as arguments
+* functions as return values
+* call/apply/bind
+* decorators
+
+Go through the functions in order; the concepts explored build off one-another, and the functions become more and more challenging to implement as you go on.
+
+
+### Steps
+
+0. prep...
+    * make sure that `mocha` and `jshint` are still installed globally (from previous assignment)
+        * if they're not installed, use `npm install` with the `-g` flag (or just check out homework #1)
+        * you'll use these to run unit tests and static analysis
+    * you'll also need a couple of modules installed locally for the unit tests to run:
+        * install `chai` locally for assertions
+        * `npm install --save-dev chai`
+        * finally, install sinon and mocha-sinon locally for mocking console.log
+        * `npm install --save-dev sinon`
+        * `npm install --save-dev mocha-sinon`
+1. implement functions below in __exercises.js__
+2. make sure you export your functions as you implement them so that...
+3. you can run tests as you develop these functions (again, the tests are included in the repository):
+    `mocha test/exercises-test.js`
+4. also remember to run jshint (there's a `.jshint` file included in the repository):
+    `jshint src/*`
+
+### Functions to Implement
+
+<hr>
+
+### `sum(num1, num2, ... numn)`
+
+__Parameters:__
+
+* `num1`, `num2` ... `numn` - the values to be summed
+
+__Returns:__
+
+* the sum of the arguments as a `Number` 
+* the sum of no arguments is 0
+
+__Description:__
+
+Adds all of the arguments together and returns the resulting sum. If there are no arguments, the resulting sum is 0. Does not have to check for types.
+
+Optional Challenge: do this without using a for loop. You'll have to use `Array.prototype.methodName` to represent a method that you would usually us on `Arrays`... and use one of the following `call`, `apply`, or `bind`.
+
+Hints:
+
+* [slides on relevant material](../slides/02/strings-arrays.html#/36)
+* [higher order functions in eloquent JavaScript](http://eloquentjavascript.net/05_higher_order.html)
+* [slides on call, apply, and bind](../slides/04/globals-methods-this.html#/16)
+
+__Example:__
+
+    // returns the sum of all arguments passed in
+    sum(1, 2, 3) // --> 6
+    sum(1, 1, 1, 1, 1, 1, 1, 1, 1, 1) // --> 10
+    sum(1) // --> 1
+
+    // returns 0 if there are no arguments passed in
+    sum() // --> 0
+
+<hr>
+
+### `repeatCall(fn, n arg)`
+
+__Parameters:__
+
+* `fn` - the function to be called repeatedly
+* `n` - the number of times to call function, `fn`
+* `arg` - the argument to pass to function, `fn`, when it is called
+
+__Returns:__
+
+* `undefined` (no return value)
+
+__Description:__
+
+This function demonstrates using functions as an argument or arguments to another function. It calls function, `fn`, `n` times, passing in the argument, `arg` to each invocation / call.  It will ignore the return value of function calls. Note that it passes in only one `arg`. Check out the [readings](http://eloquentjavascript.net/05_higher_order.html) or [slides](../slides/04/higher-order-functions-continued.html) on higher order functions for relevant background material and examples.
+
+__Example:__
+
+    repeatCall(console.log, 3, "Hello!");
+    // prints out:
+    // Hello!
+    // Hello!
+    
+    // calls console.log twice, each time passing in only the first argument
+    // (we'll see how to fix this later)
+    repeatCall(console.log, 2, "foo", "bar", "baz", "qux", "quxx", "corge");
+        
+    // prints out (again, only 1st arg is passed in):
+    // foo 
+    // foo 
+
+<hr>
+
+### `repeatCallAllArgs(fn, n, args1 ... argsn)`
+
+__Parameters:__
+
+* `fn` - the function to be called repeatedly
+* `n` - the number of times to call function, `fn`
+* `args1 ... argsn` - _all_ of the arguments to pass in to the function `fn` when it is called
+
+__Returns:__
+
+* `undefined` (no return value)
+
+__Description:__
+
+This is pretty much the same function as the previous, but it also demonstrates using the `arguments` object along with `apply`. It calls function, `fn`, `n` times, passing in all of the remaining arguments that were passed to the original function, as the arguments to the `fn` function invocation. It will ignore the return value of function calls. Here are the relevant slides:
+
+* [slides arguments object](../slides/02/strings-arrays.html#/36)
+* [slides on call, apply, and bind](../slides/04/globals-methods-this.html#/16)
+
+Again, you'll have to use `apply` for this... and you'll have to use it on _some_ of the values in the `arguments` object.
+
+Optional challenge: Note that if you want to get a sub-`Array` of the elements in arguments, you won't be able to use `slice` because it is not actually an `Array` (so it doesn't have `Array` methods. How do you get around this? You can use `call` on the `Array` method, slice! To access `slice` outside of an "instance" of an `Array`, use `Array.prototype.slice`. From there, you can treat that whole expression as a function object... and call methods like `call`, `apply` or `bind`.
+
+
+__Example:__
+
+    // calls console.log twice, each time passing in the args, "foo", "bar", ... "corge"
+    repeatCallAllArgs(console.log, 2, "foo", "bar", "baz", "qux", "quxx", "corge");
+        
+    // prints out:
+    // foo bar baz qux quxx corge
+    // foo bar baz qux quxx corge
+
+<hr>
+
+### `makePropertyChecker(prop)`
+
+__Parameters:__
+
+* `prop` - a string representing the property to check for
+
+__Returns:__
+
+* `function` - a function that...
+    * has 1 parameter, an `object`
+    * returns `true` if the original `prop` is in `object`, `false` otherwise
+
+__Description:__
+
+
+The previous functions showed how functions can be passed in as arguments to another function. In this function, we'll be returning a function. You can think of it as a _function producing factory_! 
+
+The original function will take an argument, a `String` representing the property that the new function will check for. You can use the newly returned function to check an object for that property. However, it will only check for properties on the object itself, not inherited properties. See the [slides on objects](../slides/02/objects.html#/16) to see how to do this. Again, you can also check out the [readings](http://eloquentjavascript.net/05_higher_order.html) or [slides](../slides/04/higher-order-functions-continued.html) on higher order functions for relevant background material and examples.
+
+__Example:__
+
+    // returns a function that checks for an object for a specific property
+    // setup some objects
+    var duck = {
+        quack: function(){
+            console.log('quack');
+        }
+    };
+    var notADuck = {};
+
+    // this new syntax creates an object that inherits from duck
+    var duckling = Object.create(duck);
+    
+    var canQuack = makePropertyChecker('quack');
+    canQuack(duck) // --> true
+    canQuack(notADuck) // --> false
+    canQuack(duckling) // --> false
+    
+
+<hr>
+
+### `constrainDecorator(fn, min, max)`
+
+__Parameters:__
+
+* `fn` - the function to modify (_decorate_)
+* `min` - the minimum value that `fn` can return
+* `max` - the maximum value that `fn` can return
+
+__Returns:__
+
+* `function` - a function that...
+    * does the same thing as the original function, `fn` (that is, it calls the original function)
+    * accepts the same number of arguments as the original function, `fn`
+    * the return value is the return value of `fn`, unless it is less than or greater than the `min` and `max`, in which case it returns `min` or `max` respectively
+
+__Description:__
+
+This function is a decorator. [See the slides on the decorator pattern](../slides/04/higher-order-functions-continued.html#/29) for background information. It builds on top of the example in the slides by actually _modifying_ the return value of the original function. 
+
+This function wraps the function `fn` in another function so that operations can be performed before and after the original function `fn` is called. This can be used to modify incoming arguments, modify the return value, or do any other task before or after the function call. Again, we'll be modifying the return value in this case.
+
+This particular decorator function constrains the result of the function being wrapped, `fn` so that its return value fits between `min` and `max` inclusive. If these are omitted from the original outer function, then the newly returned function will just return the value unmodified. You can assume that the return value of `fn` is `Number` (you do not have to deal with other types).
+
+
+__Example:__
+
+    // creates a new function from the built-in function, parseInt
+    // the new function is the same thing as parseInt, but it constrains
+    // the return value to a value between min and max (inclusive)
+    var constrainedParseInt = constrainDecorator(parseInt, -10, 10);
+
+    // still works like the original parseInt
+    constrainedParseInt("7") // --> 7
+    constrainedParseInt("-10")) // --> -10
+
+    // but if the return value is less than min or greater than max
+    // it returns min or max respectively
+    constrainedParseInt("-12") // --> -10
+    constrainedParseInt("12")) // --> 10
+
+    // however, if either min or max are missing, then the new function
+    // returns the result of fn unmodified regardless of value
+    var constrainedParseInt2 = constrainDecorator(parseInt);
+    constrainedParseInt2("-12") // --> -12
+
+<hr>
+
+### `limitCallsDecorator(fn, n)`
+
+__Parameters:__
+
+* `fn` - the function to modify (_decorate_)
+* `n` - the number of times that `fn` is allowed to be called
+
+__Returns:__
+
+* `function` - a function that...
+    * does the same thing as the original function, `fn` (that is, it calls the original function)
+    * but can only be called `n` times
+    * after the `n`th call, the original function, `fn` will not be called, and the return value will always be `undefined`
+
+__Description:__
+
+This is the culmination of all of the concepts from the previous functions. However, instead of just reading from a variable that's available through the closure, you'll use it to keep track of the number of times that a function is called... and prevent the function from being called again if it goes over the `max` number of allowed function calls. Here are the steps you'll go through to implement this:
+
+1. create your decorator (function)
+2. create a local variable to keep track of the number of calls
+3. create an inner function to return
+    * the inner function will check if the number of calls is less than the max number of allowed calls
+    * if it's still under max, call the function, `fn` (allow all arguments to be passed), return the return value of calling `fn`, and increment the number of calls
+    * if it's over max, just return `undefined` immediately without calling the original function
+
+__Example:__
+
+    limitedParseInt = limitCallsDecorator(parseInt, 3);
+    limitedParseInt("423") // --> 423
+    limitedParseInt("423") // --> 423
+    limitedParseInt("423") // --> 423
+    limitedParseInt("423") // --> undefined
+
+
+## Part 2 - Hawks vs Pacers, Local Copy of JSON Data
+
+The original data for this game was sourced from [stats.nba.com's Box Score and JSON data for the Pacers vs Hawks game from 2/5/2016](http://stats.nba.com/game/#!/0021500750/).  I've restructured it and made the data available through the course site. You'll be using this data to extract some information from the game.
+
+### Importing Data
+
+* Start with a local copy of data by creating a variable and setting it equal to the string version (put it in single quotes) of the game's data in JSON format (you can copy and paste the code below - __make sure you include the outer single quotes, since it's a string__!).
+* Use methods from the built-in <code>JSON</code> object to convert the string data into an actual JavaScript object. See [the slides](../slides/02/objects.html#/20) or the [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+* (This may seem odd at first, but it'll be useful later when we fetch remote data as a string)
+
+<pre><code>var responseBody = '{"id":"0021500750","date":"20160205","arena":"Philips Arena","city":"Atlanta","state":"GA","next":"http://foureyes.github.io/csci-ua.0480-fall2016-007/homework/02/0021500751.json","players":[{"first_name":"Paul","last_name":"George","jersey_number":"13","person_id":"202331","position_short":"F","position_full":"Forward","minutes":"37","seconds":"37","field_goals_made":"11","field_goals_attempted":"21","player_code":"paul_george","free_throws_made":"2","free_throws_attempted":"2","three_pointers_made":"7","three_pointers_attempted":"12","rebounds_offensive":"2","rebounds_defensive":"7","assists":"6","fouls":"3","steals":"0","turnovers":"1","team_turnovers":"","blocks":"0","starting_position":"F","team_name":"Pacers"},{"first_name":"Myles","last_name":"Turner","jersey_number":"33","person_id":"1626167","position_short":"F-C","position_full":"Forward-Center","minutes":"22","seconds":"57","field_goals_made":"6","field_goals_attempted":"11","player_code":"myles_turner","free_throws_made":"0","free_throws_attempted":"0","three_pointers_made":"0","three_pointers_attempted":"0","rebounds_offensive":"4","rebounds_defensive":"3","assists":"0","fouls":"4","steals":"1","turnovers":"1","team_turnovers":"","blocks":"1","starting_position":"F","team_name":"Pacers"},{"first_name":"Jordan","last_name":"Hill","jersey_number":"27","person_id":"201941","position_short":"C","position_full":"Center","minutes":"28","seconds":"16","field_goals_made":"1","field_goals_attempted":"5","player_code":"jordan_hill","free_throws_made":"1","free_throws_attempted":"2","three_pointers_made":"0","three_pointers_attempted":"0","rebounds_offensive":"3","rebounds_defensive":"5","assists":"3","fouls":"2","steals":"1","turnovers":"5","team_turnovers":"","blocks":"0","starting_position":"C","team_name":"Pacers"},{"first_name":"Monta","last_name":"Ellis","jersey_number":"11","person_id":"101145","position_short":"G","position_full":"Guard","minutes":"34","seconds":"33","field_goals_made":"4","field_goals_attempted":"13","player_code":"monta_ellis","free_throws_made":"0","free_throws_attempted":"0","three_pointers_made":"3","three_pointers_attempted":"7","rebounds_offensive":"0","rebounds_defensive":"3","assists":"1","fouls":"2","steals":"3","turnovers":"4","team_turnovers":"","blocks":"1","starting_position":"G","team_name":"Pacers"},{"first_name":"George","last_name":"Hill","jersey_number":"3","person_id":"201588","position_short":"G","position_full":"Guard","minutes":"35","seconds":"10","field_goals_made":"3","field_goals_attempted":"8","player_code":"george_hill","free_throws_made":"0","free_throws_attempted":"0","three_pointers_made":"1","three_pointers_attempted":"2","rebounds_offensive":"1","rebounds_defensive":"2","assists":"8","fouls":"3","steals":"0","turnovers":"1","team_turnovers":"","blocks":"0","starting_position":"G","team_name":"Pacers"},{"first_name":"Lavoy","last_name":"Allen","jersey_number":"5","person_id":"202730","position_short":"F-C","position_full":"Forward-Center","minutes":"30","seconds":"1","field_goals_made":"6","field_goals_attempted":"10","player_code":"lavoy_allen","free_throws_made":"1","free_throws_attempted":"1","three_pointers_made":"0","three_pointers_attempted":"0","rebounds_offensive":"6","rebounds_defensive":"8","assists":"2","fouls":"2","steals":"0","turnovers":"3","team_turnovers":"","blocks":"1","starting_position":"","team_name":"Pacers"},{"first_name":"Joe","last_name":"Young","jersey_number":"1","person_id":"1626202","position_short":"G","position_full":"Guard","minutes":"7","seconds":"43","field_goals_made":"0","field_goals_attempted":"2","player_code":"joe_young","free_throws_made":"0","free_throws_attempted":"0","three_pointers_made":"0","three_pointers_attempted":"1","rebounds_offensive":"0","rebounds_defensive":"1","assists":"2","fouls":"0","steals":"0","turnovers":"0","team_turnovers":"","blocks":"0","starting_position":"","team_name":"Pacers"},{"first_name":"Solomon","last_name":"Hill","jersey_number":"44","person_id":"203524","position_short":"F","position_full":"Forward","minutes":"14","seconds":"46","field_goals_made":"1","field_goals_attempted":"7","player_code":"solomon_hill","free_throws_made":"2","free_throws_attempted":"2","three_pointers_made":"0","three_pointers_attempted":"3","rebounds_offensive":"2","rebounds_defensive":"0","assists":"0","fouls":"2","steals":"1","turnovers":"1","team_turnovers":"","blocks":"0","starting_position":"","team_name":"Pacers"},{"first_name":"C.J.","last_name":"Miles","jersey_number":"0","person_id":"101139","position_short":"F-G","position_full":"Forward-Guard","minutes":"18","seconds":"34","field_goals_made":"5","field_goals_attempted":"12","player_code":"cj_miles","free_throws_made":"1","free_throws_attempted":"2","three_pointers_made":"2","three_pointers_attempted":"6","rebounds_offensive":"0","rebounds_defensive":"4","assists":"1","fouls":"0","steals":"0","turnovers":"3","team_turnovers":"","blocks":"1","starting_position":"","team_name":"Pacers"},{"first_name":"Glenn","last_name":"Robinson","jersey_number":"40","person_id":"203922","position_short":"G-F","position_full":"Guard-Forward","minutes":"10","seconds":"23","field_goals_made":"1","field_goals_attempted":"2","player_code":"glenn_robinson_iii","free_throws_made":"0","free_throws_attempted":"0","three_pointers_made":"0","three_pointers_attempted":"0","rebounds_offensive":"1","rebounds_defensive":"1","assists":"0","fouls":"0","steals":"0","turnovers":"0","team_turnovers":"","blocks":"0","starting_position":"","team_name":"Pacers"},{"first_name":"Kent","last_name":"Bazemore","jersey_number":"24","person_id":"203145","position_short":"F-G","position_full":"Forward-Guard","minutes":"32","seconds":"4","field_goals_made":"5","field_goals_attempted":"11","player_code":"kent_bazemore","free_throws_made":"3","free_throws_attempted":"4","three_pointers_made":"2","three_pointers_attempted":"5","rebounds_offensive":"0","rebounds_defensive":"1","assists":"8","fouls":"3","steals":"3","turnovers":"2","team_turnovers":"","blocks":"0","starting_position":"F","team_name":"Hawks"},{"first_name":"Paul","last_name":"Millsap","jersey_number":"4","person_id":"200794","position_short":"F","position_full":"Forward","minutes":"33","seconds":"1","field_goals_made":"10","field_goals_attempted":"14","player_code":"paul_millsap","free_throws_made":"1","free_throws_attempted":"5","three_pointers_made":"3","three_pointers_attempted":"6","rebounds_offensive":"1","rebounds_defensive":"1","assists":"0","fouls":"1","steals":"2","turnovers":"2","team_turnovers":"","blocks":"4","starting_position":"F","team_name":"Hawks"},{"first_name":"Al","last_name":"Horford","jersey_number":"15","person_id":"201143","position_short":"C-F","position_full":"Center-Forward","minutes":"34","seconds":"13","field_goals_made":"8","field_goals_attempted":"16","player_code":"al_horford","free_throws_made":"4","free_throws_attempted":"4","three_pointers_made":"1","three_pointers_attempted":"4","rebounds_offensive":"0","rebounds_defensive":"7","assists":"6","fouls":"1","steals":"1","turnovers":"2","team_turnovers":"","blocks":"0","starting_position":"C","team_name":"Hawks"},{"first_name":"Kyle","last_name":"Korver","jersey_number":"26","person_id":"2594","position_short":"G","position_full":"Guard","minutes":"27","seconds":"5","field_goals_made":"2","field_goals_attempted":"7","player_code":"kyle_korver","free_throws_made":"0","free_throws_attempted":"0","three_pointers_made":"2","three_pointers_attempted":"6","rebounds_offensive":"0","rebounds_defensive":"5","assists":"1","fouls":"5","steals":"1","turnovers":"2","team_turnovers":"","blocks":"0","starting_position":"G","team_name":"Hawks"},{"first_name":"Jeff","last_name":"Teague","jersey_number":"0","person_id":"201952","position_short":"G","position_full":"Guard","minutes":"30","seconds":"11","field_goals_made":"5","field_goals_attempted":"9","player_code":"jeff_teague","free_throws_made":"6","free_throws_attempted":"7","three_pointers_made":"0","three_pointers_attempted":"2","rebounds_offensive":"1","rebounds_defensive":"4","assists":"4","fouls":"1","steals":"1","turnovers":"4","team_turnovers":"","blocks":"0","starting_position":"G","team_name":"Hawks"},{"first_name":"Mike","last_name":"Muscala","jersey_number":"31","person_id":"203488","position_short":"F-C","position_full":"Forward-Center","minutes":"12","seconds":"40","field_goals_made":"2","field_goals_attempted":"2","player_code":"mike_muscala","free_throws_made":"0","free_throws_attempted":"0","three_pointers_made":"0","three_pointers_attempted":"0","rebounds_offensive":"0","rebounds_defensive":"1","assists":"0","fouls":"1","steals":"0","turnovers":"0","team_turnovers":"","blocks":"0","starting_position":"","team_name":"Hawks"},{"first_name":"Thabo","last_name":"Sefolosha","jersey_number":"25","person_id":"200757","position_short":"F","position_full":"Forward","minutes":"23","seconds":"27","field_goals_made":"0","field_goals_attempted":"2","player_code":"thabo_sefolosha","free_throws_made":"0","free_throws_attempted":"0","three_pointers_made":"0","three_pointers_attempted":"0","rebounds_offensive":"1","rebounds_defensive":"4","assists":"0","fouls":"0","steals":"0","turnovers":"0","team_turnovers":"","blocks":"0","starting_position":"","team_name":"Hawks"},{"first_name":"Dennis","last_name":"Schroder","jersey_number":"17","person_id":"203471","position_short":"G","position_full":"Guard","minutes":"18","seconds":"38","field_goals_made":"4","field_goals_attempted":"9","player_code":"dennis_schroder","free_throws_made":"0","free_throws_attempted":"0","three_pointers_made":"1","three_pointers_attempted":"2","rebounds_offensive":"0","rebounds_defensive":"2","assists":"7","fouls":"3","steals":"1","turnovers":"2","team_turnovers":"","blocks":"0","starting_position":"","team_name":"Hawks"},{"first_name":"Tim","last_name":"Hardaway Jr.","jersey_number":"10","person_id":"203501","position_short":"G","position_full":"Guard","minutes":"12","seconds":"35","field_goals_made":"1","field_goals_attempted":"3","player_code":"timothy_hardaway","free_throws_made":"0","free_throws_attempted":"0","three_pointers_made":"1","three_pointers_attempted":"2","rebounds_offensive":"0","rebounds_defensive":"1","assists":"1","fouls":"0","steals":"0","turnovers":"0","team_turnovers":"","blocks":"0","starting_position":"","team_name":"Hawks"},{"first_name":"Mike","last_name":"Scott","jersey_number":"32","person_id":"203118","position_short":"F","position_full":"Forward","minutes":"16","seconds":"6","field_goals_made":"2","field_goals_attempted":"3","player_code":"mike_scott","free_throws_made":"0","free_throws_attempted":"0","three_pointers_made":"0","three_pointers_attempted":"0","rebounds_offensive":"0","rebounds_defensive":"3","assists":"2","fouls":"1","steals":"1","turnovers":"1","team_turnovers":"","blocks":"1","starting_position":"","team_name":"Hawks"}]}';
+</code></pre>
+
+## Examining the Data
+
+* The resulting data should be an object with an array containing multiple _player_ objects
+* Examine the properties in the object:
+    
+    * they are __ALL strings__ (so it may be good to clean up / transform the data before working on it)
+    * they are all named with underscores rather than camelCase (which is not the convention in JavaScript)
+    * there are a few properties that describe the game, such as the game's id, <code>id</code>, the arena, the city, etc.
+    * ... and there's also a property named <code>players</code>
+    * <code>players</code> is a list of objects, with each object representing a player
+    * you can expect to find the following properties in each _player_ object 
+	    * <code>first_name</code>: player's first name
+	    * <code>last_name</code>: player's last name
+	    * <code>team_name</code>: the team that the player is on
+	    * <code>position_short</code>: the player's position - (G)uard, (F)orward or (C)enter... or some combination of those (such as F-C for Forward Center)
+	    * <code>field_goals_made</code>: the number of field goals (both two pointers and three pointers, worth 2 and 3 points each respectively) that a player made
+	    * <code>field_goals_attempted</code>: the number of field goals (both two pointers and three pointers) that a player attempted
+	    * <code>free_throws_made</code>: the number of free throws that a player made (each only worth 1 point)
+	    * <code>free_throws_attempted</code>:  the number of free throws that a player attempted 
+	    * <code>rebounds_offensive</code>:  the player's number of defensive rebounds
+	    * <code>rebounds_defensive</code>:  the player's number of offensive rebounds
+	    * <code>three_pointers_made</code>:  the number of three point field goals that a player made
+	    * <code>three_pointers_attempted</code>:  the number of three point field goals that a player attempted
+	    * <code>turnovers</code>:  the number of turnovers a player made (loss of possession of ball)
+	    * <code>assists</code>:  the number of assists that a player made (the number of passes that led to a score)
+
+## Calculations
+
+### (8 points) Implementation Requirements
+You must use __all__ of the following Array methods __at least once each__ in your program:
+
+* <code>forEach</code>
+* <code>filter</code>
+* <code>map</code>
+* <code>reduce</code>
+
+
+### (2 points) Game ID
+
+* Start by printing out the game's id (for example, for the Hawks vs Pacers game, it's <code>0021500750</code>
+    <pre><code data-trim contenteditable>Game ID: 0021500750
+=====
+</code></pre>
+* Notice the line of 5 equal signs underneath the game id
+
+
+### (5 points) Final Score
+
+* Print out the final score of the game based on the data provided.
+* The score for each team can be calculated by summing the following values for each player on that team:
+	* __3 points__ for every of three point field goal made 
+	* __2 points__ for every two point field goal made
+	* __1 point__ for every free throw made
+* Note that the number of 2 point field goals made is actually number of field_goals_made  - three_pointers_made (because field_goals_made counts both twos and threes)
+* Output the score in the following format: <code>team_name total_score</code>
+
+* Example output: 
+    <pre><code data-trim contenteditable>Pacers 96
+Hawks 102
+</code></pre>
+
+### (5 points) Player With the Most Rebounds
+
+* Print out the name and the number of rebounds of the player that had the most rebounds in the game
+* The number of rebounds is the sum of Offensive Rebounds and Defensive Rebounds.
+* The output should be in the following format: <code> * Most rebounds: player_name with number_of_rebounds</code>.
+
+* Example output:
+    <pre><code data-trim contenteditable> * Most rebounds: Lavoy Allen with 14
+</code></pre>
+
+### (5 points) Guard (G)  With Highest Three Pointer Percentage 
+
+* Print out the name of the Guard (any player that has a <code>position_short</code> that contains the character <code>G</code>)...
+    * that attempted at least one three point shot
+    * and... has the highest three point shooting percentage in the game
+    * (three point shooting percentage is number of threes made divided by number of threes attempted)
+* The output should be in the following format: <code> * Guard (short_position) with highest 3 point percentage: first_name, last_name at percentage (made/attempted)
+</code>. 
+* Example output:
+    <pre><code data-trim contenteditable> * Guard (G) with highest 3 point percentage: George Hill at %50.00 (1/2)
+</code></pre>
+
+
+
+### (5 points) Total Number of Players With at Least One Assist
+
+* Print out the total number of players across both teams that have at least one assist
+* The output should be in the following format: <code> * There were total_number_of_players_with_min_assists players that had at least one assist
+</code>.
+* Example output:
+    <pre><code data-trim contenteditable>There were 14 players that had at least one assist</code></pre>
+
+### (5 points) Team That Attempted the Most Free Throws
+
+* Print out the team name that __attempted__ more free throws than the other team
+* Additionally, display the total number of free throws attempted by both teams
+* The output should be in the following format: <code> * team_name attempted the most free throws... team_name_1: free_throws_attempted_1 team_name_2: free_throws_attempted_2
+</code>. 
+* Example output:
+    <pre><code data-trim contenteditable> * Hawks attempted the most free throws... Pacers: 9 Hawks: 20
+</code></pre>
+
+### (5 points) Players With More Turnovers Than Assists
+
+* List all of the players that have more turnovers than assists.
+* The format of the output should be: <code> * team_name players with more turnovers than assists:</code>.
+* ...Followed by a list of player names in the format <code>first_name last_name has an assist to turnover ratio of assists:turnovers</code>.
+* Example output:
+<pre><code data-trim contenteditable> * Pacers players with more turnovers than assists:
+    * Myles Turner has an assist to turnover ratio of 0:1
+    * Jordan Hill has an assist to turnover ratio of 3:5
+    * Monta Ellis has an assist to turnover ratio of 1:4
+    * Lavoy Allen has an assist to turnover ratio of 2:3
+    * Solomon Hill has an assist to turnover ratio of 0:1
+    * C.J. Miles has an assist to turnover ratio of 1:3
+* Hawks players with more turnovers than assists:
+    * Paul Millsap has an assist to turnover ratio of 0:2
+    * Kyle Korver has an assist to turnover ratio of 1:2
+</code></pre>
+
+<!--* -->
+
+### Example Output
+
+<a name="hw02-sample"></a>
+
+The full output of this part of the assignment should look like this report below.
+
+(You can also reference the game stats from [stats.nba.com](http://stats.nba.com/game/#!/0021500750/))
+
+<pre><code>Game ID: 0021500750
+=====
+Pacers 96
+Hawks 102
+* Most rebounds: Lavoy Allen with 14
+* Guard (G) with highest 3 point percentage: George Hill at %50.00 (1/2)
+* There were 14 players that had at least one assist
+* Hawks attempted the most free throws... Pacers: 9 Hawks: 20
+* Pacers players with more turnovers than assists:
+    * Myles Turner has an assist to turnover ratio of 0:1
+    * Jordan Hill has an assist to turnover ratio of 3:5
+    * Monta Ellis has an assist to turnover ratio of 1:4
+    * Lavoy Allen has an assist to turnover ratio of 2:3
+    * Solomon Hill has an assist to turnover ratio of 0:1
+    * C.J. Miles has an assist to turnover ratio of 1:3
+* Hawks players with more turnovers than assists:
+    * Paul Millsap has an assist to turnover ratio of 0:2
+    * Kyle Korver has an assist to turnover ratio of 1:2
+</code></pre>
+
+Commit and push your code; the next part will make modifications to this existing code (you can overwrite your work in this file directly for the next part).
+<!--* -->
+
+## Part 3 - Retrieve JSON from URL
+
+
+### (3 points) Setup for Retrieving JSON 
+
+Instead of hardcoding a JSON string in your program, __modify your program__ so that it requests JSON data from a specified url. Run your report again; the output should remain unchanged despite the change in data source. __You should overwrite your existing file__ (the diffs are in git anyway).
+
+* Add <code>node_modules</code> to your <code>.gitignore</code> file so that it isn't tracked by git (same as previous assignment)
+* Install the requests library in your project's root folder: <code>npm install --save request</code> (similar to installing <code>readline-sync</code> in the previous assignment)
+* Add the module to the beginning of your program 
+* __Remove the harcoded JSON data__, and replace it with...
+
+### (7 points) Retrieve and Process JSON Data
+
+* Use the requests library to retrieve the URL that contains the game data for the Hawks Pacers game that you previously hardcoded
+* The URL for the game data is:
+    * [http://foureyes.github.io/csci-ua.0480-fall2016-007/homework/02/0021500750.json](http://foureyes.github.io/csci-ua.0480-fall2016-007/homework/02/0021500750.json)
+* [Read the documentation](https://github.com/mikeal/request) to see how to use the requests module (or see the [slides](http://foureyes.github.io/csci-ua.0480-fall2016-007/slides/03/node-npm-debug-git.html#/6))
+* Notice that the data is now only available within the callback that you pass in to calling <code>request</code> 
+* A __callback__ is a function passed as an argument to another function... the callback will be invoked / executed at a later time, when some event is triggered
+* In the case of <code>request</code>, it's the function that you pass in as the 2nd argument
+* (All of your report generation logic should be moved to the callback... or it should be encapsulated in a function called from the callback)
+
+### (6 points) Process Data From Requested JSON
+
+* The top level object from the parsed JSON data contains a <code>next</code> property;
+* The <code>next</code> property contains a URL to another game
+* Use the <code>request</code> library again to get retrieve and process the data from this new URL
+* Continue to do this until the <code>next</code> property does not contain a url
+* Your program should print out reports on several games.
+* Finally, run jshint on your code and fix any warnings/errors
+* Example Output:
+
+<pre><code data-trim contenteditable>Game ID: 0021500750
+=====
+Pacers 96
+Hawks 102
+* Most rebounds: Lavoy Allen with 14
+* Guard (G) with highest 3 point percentage: George Hill at %50.00 (1/2)
+* There were 14 players that had at least one assist
+* Hawks attempted the most free throws... Pacers: 9 Hawks: 20
+* Pacers players with more turnovers than assists:
+    * Myles Turner has an assist to turnover ratio of 0:1
+    * Jordan Hill has an assist to turnover ratio of 3:5
+    * Monta Ellis has an assist to turnover ratio of 1:4
+    * Lavoy Allen has an assist to turnover ratio of 2:3
+    * Solomon Hill has an assist to turnover ratio of 0:1
+    * C.J. Miles has an assist to turnover ratio of 1:3
+* Hawks players with more turnovers than assists:
+    * Paul Millsap has an assist to turnover ratio of 0:2
+    * Kyle Korver has an assist to turnover ratio of 1:2
+
+.
+.
+&lt;additional games&gt;
+.
+.
+
+Game ID: 0021500756
+=====
+Grizzlies 91
+Knicks 85
+* Most rebounds: Kristaps Porzingis with 10
+* Guard (G-F) with highest 3 point percentage: Tony Allen at %100.00 (1/1)
+* There were 12 players that had at least one assist
+* Grizzlies attempted the most free throws... Grizzlies: 24 Knicks: 17
+* Grizzlies players with more turnovers than assists:
+    * Marc Gasol has an assist to turnover ratio of 1:3
+    * Matt Barnes has an assist to turnover ratio of 1:2
+    * Vince Carter has an assist to turnover ratio of 0:1
+* Knicks players with more turnovers than assists:
+    * Kristaps Porzingis has an assist to turnover ratio of 0:3
+    * Robin Lopez has an assist to turnover ratio of 0:3
+    * Kevin Seraphin has an assist to turnover ratio of 0:1
+</code></pre>
+</div>
+
+</div>
+

@@ -1,0 +1,14 @@
+	<td markdown="block">
+{% comment %}
+* [About Class #8](slides/08/meta.html)
+{% endcomment %}
+* Quick Review of HTTP Module
+* [Project Setup](slides/08/setup.html)
+* [Express](slides/08/express.html)
+</td>
+	<td markdown="block">
+</td>
+	<td markdown="block">
+* Quiz #04 - HTTP, net Module - to be posted this evening, due Monday
+
+</td>
